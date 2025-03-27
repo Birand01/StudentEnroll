@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using StudentEnroll.Models;
 
 namespace StudentEnroll.Controllers
 {
@@ -10,6 +11,14 @@ namespace StudentEnroll.Controllers
             
         }
         public IActionResult Apply()
+        {
+            return View();
+            
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Apply([FromForm]Candidate model)
         {
             return View();
             

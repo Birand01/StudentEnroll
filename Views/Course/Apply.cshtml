@@ -3,8 +3,8 @@
 <div class="display-5">
     APPLY
 </div>
-<form>
-    <div class="form-group my-2">
+<form method="post">
+    <div class="form-group my-2" action="/Course/Apply">
         <label>Email</label>
         <input name="Email" class="form-control"/>
     </div>
@@ -48,6 +48,10 @@
          <p></p>
             <input id="csharp" type="radio" name="SelectedCourse" value="C#"/>
             <label>C#</label>
+        </p>
+         <p></p>
+            <input id="blazor" type="radio" name="SelectedCourse" value="Blazor"/>
+            <label>Blazor</label>
         </p>
     </fieldset>
   <div>
