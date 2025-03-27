@@ -20,7 +20,8 @@ namespace StudentEnroll.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Apply([FromForm]Candidate model)
         {
-            return View();
+            Repository.Add(model);
+            return Redirect("/");
             
         }
     }
