@@ -21,9 +21,17 @@ namespace StudentEnroll.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Apply([FromForm]Candidate model)
         {
-            Repository.Add(model);
-            return View("FeedBack",model);
-            
+            if(Repository.Applications.Any(c=>c.Email.Equals(model.Email)))
+            {
+                ModelState.AddModelError(model.Email,"APPLICATION HAS ALREADY REGISTERED FOR THIS EMAIL");
+            }
+            if(ModelState.IsValid)
+            {
+                 Repository.Add(model);
+                 return View("FeedBack",model);
+            }
+           
+            return View();
         }
     }
 
