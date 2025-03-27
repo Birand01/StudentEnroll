@@ -21,7 +21,7 @@ namespace StudentEnroll.Controllers
         public IActionResult Apply([FromForm]Candidate model)
         {
             Repository.Add(model);
-            return Redirect("/");
+            return View("FeedBack",model);
             
         }
     }
